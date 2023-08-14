@@ -1,0 +1,34 @@
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Új termék felvitele</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="productForm">
+        <mat-form-field class="example-full-width">
+          <mat-label>Termék neve</mat-label>
+          <input matInput type="text" formControlName="productName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Leírás</mat-label>
+          <input matInput type="text" formControlName="description">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Mennyiség</mat-label>
+          <input matInput type="number" formControlName="amount">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Ár</mat-label>
+          <input matInput type="number" formControlName="price">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Fénykép feltöltése</mat-label>
+          <input matInput type="text" formControlName="photoUrl">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="saveProduct()">Mentés</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

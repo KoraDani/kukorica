@@ -1,0 +1,24 @@
+<!--<app-menu (selectedPage)="changePage($event)" [currentPage]="page"></app-menu>-->
+<mat-sidenav-container>
+  <mat-sidenav>
+    <app-menu></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <mat-nav-list>
+        <div fxFlex fxLayout fxLayoutAlign="flex-end">
+          <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+            <li><a mat-list-item routerLink="/main">Main</a></li>
+            <li><a mat-list-item routerLink="/shop">Shop</a></li>
+            <li><a mat-list-item routerLink="/add">Add New Product</a></li>
+            <li><a mat-list-item routerLink="/address">Rendelések</a></li>
+            <li><a mat-list-item routerLink="/userdata"><mat-icon>person</mat-icon></a></li>
+            <li><a mat-list-item routerLink="/login">Bejelentkezés</a></li>
+            <li><a mat-list-item routerLink="/register">Regisztráció</a></li>
+          </ul>
+        </div>
+      </mat-nav-list>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,17 @@
+<div>
+  <mat-card *ngFor="let item of productList">
+    <mat-card-header>
+      <mat-card-title>{{item.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      Leírás: {{item.description}}<br>
+      Ár: {{item.amount}}<br>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="changeToView()">Megtekintés</button>
+      <button mat-raised-button>Kosárba</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div>
+</div>
