@@ -1,6 +1,7 @@
 package hu.back.kukorica.controller;
 
 import hu.back.kukorica.model.Address;
+import hu.back.kukorica.model.User;
 import hu.back.kukorica.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,8 @@ public class AddressController {
 
     @PostMapping("/saveAddress")
     public ResponseEntity<Address> saveAddress(@RequestBody Address address){
+        System.out.println(address.getUser_id());
+        address.setUser_id(2);
         Address newaddress = this.addressService.saveAddress(address);
         return new ResponseEntity<>(newaddress, HttpStatus.OK);
     }

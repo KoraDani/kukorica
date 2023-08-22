@@ -6,6 +6,7 @@ export interface Order{
   user: User;
   address: Address;
   files: string;
+  productId: number;
   orderFileUrl: string;
   price: number;
   orderDate: string;

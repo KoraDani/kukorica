@@ -17,6 +17,7 @@ public class Order {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     private String files;
+    private long productId;
     private String orderFileUrl;
     private String orderDate;
     private String finishDate;

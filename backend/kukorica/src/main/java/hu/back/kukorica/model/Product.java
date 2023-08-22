@@ -13,8 +13,7 @@ import javax.persistence.Id;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long orderId;
+    private int id;
     private String name;
     private String description;
     private int amount;

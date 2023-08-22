@@ -47,12 +47,12 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
         ).and();
 
         http.authorizeRequests()
-                .antMatchers("/h2-console/**").permitAll()
-                .and().csrf().ignoringAntMatchers("/h2-console/**").and().authorizeRequests()
-                .and().headers().frameOptions().sameOrigin().and().authorizeRequests()
+//                .antMatchers("/h2-console/**").permitAll()
+//                .and().csrf().ignoringAntMatchers("/h2-console/**").and().authorizeRequests()
+//                .and().headers().frameOptions().sameOrigin().and().authorizeRequests()
                 .antMatchers("/userController/login").permitAll()
                 .antMatchers("/userController/saveUser").permitAll()
-                .anyRequest().authenticated();
+                .anyRequest().permitAll();
 
         //TODO: EZ ITTNENE NAGYON FONTOS NE PISZKÁLD
 

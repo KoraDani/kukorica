@@ -2,7 +2,7 @@ import {User} from "./User";
 
 export interface Address{
   id: number;
-  user: User;
+  user_id: number;
   country: string;
   city: string;
   street: string;

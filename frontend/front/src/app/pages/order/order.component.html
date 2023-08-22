@@ -1,31 +1,16 @@
-
-<div fxLayout="row" fxLayoutAlign="center center">
-  <mat-card>
-    <mat-card-header fxLayoutAlign="center">
-      <mat-card-title>Nyomtatandó fájl</mat-card-title>
-    </mat-card-header>
-    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
-      <form [formGroup]="orderForm">
-        <mat-form-field class="example-full-width">
-          <mat-label>Fájl leírása</mat-label>
-          <input matInput type="text" formControlName="files">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Fájl feltöltése</mat-label>
-          <input matInput type="text" formControlName="file">
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-  </mat-card>
-
-</div>
-<div fxLayout="column" fxLayoutAlign="center center">
-  <mat-card>
+<div *ngIf="cart">
+  <mat-card *ngFor="let item of cart">
     <mat-card-header>
-      <mat-card-title fxLayoutAlign="center">Rendelés végelegesítése</mat-card-title>
+      <mat-card-title>{{item.name}}</mat-card-title>
     </mat-card-header>
-    <mat-card-content fxLayoutAlign="center">
-      <button mat-raised-button color="primary" (click)="orderPrint()">Rendelés</button>
+    <mat-card-content>
+      Leírás: {{item.description}}<br>
+      Ár: {{item.amount}}<br>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="increaseAmount(item.id)" ></button>
+    </mat-card-actions>
   </mat-card>
+</div>
+<div *ngIf="!cart">
 </div>

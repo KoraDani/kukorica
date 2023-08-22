@@ -14,21 +14,25 @@ import java.util.List;
 
 @Entity
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "USER_MODEL")
+@NoArgsConstructor
+@Table(name = "user")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String sessionId;
+    private int id;
     private String name;
     private String password;
     private String email;
     private int coins;
+    private String sessionId;
 //    @Enumerated(EnumType.STRING)
 //    private Role role;
+
+
+    public User(int id) {
+        this.id = id;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

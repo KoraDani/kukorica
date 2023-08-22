@@ -3,6 +3,9 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {Address} from "../../../shared/model/Address";
 import {AddressService} from "../../../shared/service/address.service";
 import {Router} from "@angular/router";
+import {User} from "../../../shared/model/User";
+import {Order} from "../../../shared/model/Order";
+import {OrderService} from "../../../shared/service/order.service";
 
 @Component({
   selector: 'app-address',
@@ -12,8 +15,13 @@ import {Router} from "@angular/router";
 export class AddressComponent {
 
 
-  constructor(private addressServ: AddressService, private route: Router) {
+  constructor(private addressServ: AddressService,private orderServ: OrderService ,private route: Router) {
   }
+
+  orderForm: FormGroup = new FormGroup({
+    files: new FormControl(),
+    file: new FormControl()
+  });
 
   addressForm: FormGroup = new FormGroup({
     orszag: new FormControl(),
@@ -25,10 +33,10 @@ export class AddressComponent {
   });
 
   saveAddress(){
+
     let address: Address = {
       id: 0,
-      // @ts-ignore
-      user: null,
+      user_id: 1,
       country: this.addressForm.get('orszag')?.value,
       city: this.addressForm.get('varos')?.value,
       street: this.addressForm.get('utca')?.value,
@@ -43,6 +51,38 @@ export class AddressComponent {
     },error => {
       console.error(error);
     })
+  }
+
+  orderPrint() {
+    // console.log(this.addressForm.get('orszag')?.value + " orszag");
+    console.log(this.orderForm.get('files')?.value+ "filedes");
+    let user: User = {
+      id: 0,
+      name:"asdf",
+      password: "asdf",
+      email: "asdf@asdf.hu",
+      coins: 0,
+      sessionId: ""
+    };
+
+
+    let order: Order = {
+      id: 0,
+      user: user,
+      // @ts-ignore
+      address: null,
+      orderFileUrl : this.orderForm.get('file')?.value,
+      files: this.orderForm.get('files')?.value,
+      price: 0,
+      orderDate: "asdf",
+      finishDate: "asdf",
+      shipDate: "asdf"
+    };
+    this.orderServ.saveOrder(order).subscribe(() =>{
+      console.log('sikeres elküldés');
+    },error =>{
+      console.error(error);
+    });
   }
 
 }

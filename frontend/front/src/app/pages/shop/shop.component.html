@@ -9,7 +9,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button (click)="changeToView()">Megtekintés</button>
-      <button mat-raised-button>Kosárba</button>
+      <button mat-raised-button (click)="addToCart(item.id)">Kosárba</button>
     </mat-card-actions>
   </mat-card>
 </div>

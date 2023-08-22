@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {AddService} from "../../../shared/service/add.service";
 import {Product} from "../../../shared/model/Product";
+import {ProductService} from "../../../shared/service/product.service";
 
 @Component({
   selector: 'app-add',
@@ -10,7 +11,7 @@ import {Product} from "../../../shared/model/Product";
 })
 export class AddComponent {
 
-  constructor(private addServ: AddService) {}
+  constructor(private prodServ: ProductService) {}
 
   productForm: FormGroup = new FormGroup({
     productName: new FormControl(),
@@ -29,7 +30,7 @@ export class AddComponent {
       price: this.productForm.get('price')?.value,
       photoUrl: this.productForm.get('photoUrl')?.value
     };
-    this.addServ.save(product).subscribe(() =>{
+    this.prodServ.save(product).subscribe(() =>{
       console.log("sikeres mentés");
     },error => {
       console.error(error);

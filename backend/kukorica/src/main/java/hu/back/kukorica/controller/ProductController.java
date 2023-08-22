@@ -25,6 +25,11 @@ public class ProductController {
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
+    @PostMapping("/getItemById")
+    public ResponseEntity<Product> getItemById(@RequestBody int id){
+        return new ResponseEntity<>(this.productService.getItemById(id), HttpStatus.OK);
+    }
+
     @PostMapping("/saveProduct")
     public ResponseEntity<Product> saveProduct(@RequestBody Product product){
         Product newProduct = this.productService.saveProduct(product);

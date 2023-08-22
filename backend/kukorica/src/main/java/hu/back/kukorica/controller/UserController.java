@@ -47,9 +47,11 @@ public class UserController {
 
     @PostMapping("/saveUser")
     public ResponseEntity<User> saveUser(@RequestBody User userModel){
-        userModel.setId(UUID.randomUUID().node());
-        User user = userService.saveUser(userModel);
-        System.out.println(user.getUsername() +" mentve");
-        return new ResponseEntity<>(user,HttpStatus.OK);
+//        userModel.setId(UUID.randomUUID().node());
+//        User user = userService.saveUser(userModel);
+        User user = new User(userModel.getId(),userModel.getName(),userModel.getPassword(),userModel.getEmail(), userModel.getCoins(), userModel.getSessionId());
+        System.out.println(userModel.getUsername() +" mentve");
+        userService.saveUser(user);
+        return ResponseEntity.ok(user);
     }
 }

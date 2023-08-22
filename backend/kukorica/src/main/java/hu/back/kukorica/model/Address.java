@@ -8,12 +8,12 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name = "uaddress")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    @ManyToOne
-    private User user;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private int user_id;
     private String country;
     private String city;
     private String street;
