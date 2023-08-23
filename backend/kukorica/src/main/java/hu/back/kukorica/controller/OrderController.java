@@ -28,7 +28,7 @@ public class OrderController {
 
     @PostMapping("/saveOrder")
     public ResponseEntity<Order> saveOrder(@RequestBody Order order){
-        System.out.println(order.getFiles() + " files");
+//        System.out.println(order.getFiles() + " files");
 //        Address address = this.addressService.saveAddress(order.getAddress());
         Order newOrder = this.orderService.saveOrder(order);
         return new ResponseEntity<>(newOrder, HttpStatus.OK);

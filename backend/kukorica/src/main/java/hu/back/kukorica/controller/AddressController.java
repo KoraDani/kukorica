@@ -23,8 +23,6 @@ public class AddressController {
 
     @PostMapping("/saveAddress")
     public ResponseEntity<Address> saveAddress(@RequestBody Address address){
-        System.out.println(address.getUser_id());
-        address.setUser_id(2);
         Address newaddress = this.addressService.saveAddress(address);
         return new ResponseEntity<>(newaddress, HttpStatus.OK);
     }

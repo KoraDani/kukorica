@@ -49,7 +49,7 @@ public class UserController {
     public ResponseEntity<User> saveUser(@RequestBody User userModel){
 //        userModel.setId(UUID.randomUUID().node());
 //        User user = userService.saveUser(userModel);
-        User user = new User(userModel.getId(),userModel.getName(),userModel.getPassword(),userModel.getEmail(), userModel.getCoins(), userModel.getSessionId());
+        User user = new User(userModel.getId(),userModel.getFirstName(), userModel.getLastName(),userModel.getEmail(), userModel.getPassword(), userModel.getAddressId(), userModel.getPhone(), userModel.getCoins(), userModel.getSessionId());
         System.out.println(userModel.getUsername() +" mentve");
         userService.saveUser(user);
         return ResponseEntity.ok(user);

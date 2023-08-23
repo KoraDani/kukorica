@@ -21,9 +21,12 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String password;
+    private String firstName;
+    private String lastName;
     private String email;
+    private String password;
+    private int addressId;
+    private String phone;
     private int coins;
     private String sessionId;
 //    @Enumerated(EnumType.STRING)

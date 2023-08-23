@@ -11,18 +11,13 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    //TODO itt majd lehet ez így nem lesz jó, userid-ra kel cserélni
     @OneToOne
     private User user;
-    @OneToOne
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private Address address;
-    private String files;
-    private long productId;
-    private String orderFileUrl;
     private String orderDate;
-    private String finishDate;
-    private String shipDate;
+    private int totalAmount;
+    private String status;
 
-    private int price;
+    //TODO itt ha feltölt majd a felhasználó egy fájlt akkor kell egy fileURL field is
 
 }

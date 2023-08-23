@@ -28,22 +28,6 @@ export class ShopComponent implements OnInit {
   }
 
   addToCart(id: number){
-    // let product: Product;
-    // // @ts-ignore
-    // for (let item of this.productList){
-    //   if(item.id == id){
-    //     product = {
-    //       id: item.id,
-    //       name: item.name,
-    //       description: item.description,
-    //       amount: 1,
-    //       price: item.price,
-    //       photoUrl: item.photoUrl
-    //     }
-    //   }
-    // }
-    // @ts-ignore
-    // if(product != null){
       this.prodServ.getItemById(id).subscribe((prod: Product) =>{
         this.cartServ.addToCart(prod);
       }, error => {
