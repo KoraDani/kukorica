@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {LoginService} from "../../shared/service/login.service";
-import {User} from "../../shared/model/User";
+import {Customer} from "../../shared/model/Customer";
 import {Router} from "@angular/router";
 
 
@@ -23,7 +23,7 @@ export class LoginComponent {
   login(){
 
     console.log(this.loginGroup.get('email')?.value +" " +this.loginGroup.get('pwd')?.value);
-    let user: User = {
+    let user: Customer = {
       id: 0,
       name: 'asd',
       password: this.loginGroup.get('pwd')?.value,
@@ -33,7 +33,7 @@ export class LoginComponent {
     };
 
     //TODO token-t beállítani a sessionStrogabe
-    this.loginServ.login(user).subscribe((user: User) =>{
+    this.loginServ.login(user).subscribe((user: Customer) =>{
       this.sessionId = user.sessionId;
       sessionStorage.setItem('token', this.sessionId);
 

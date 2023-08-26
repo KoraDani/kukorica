@@ -3,7 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {Address} from "../../../shared/model/Address";
 import {AddressService} from "../../../shared/service/address.service";
 import {Router} from "@angular/router";
-import {User} from "../../../shared/model/User";
+import {Customer} from "../../../shared/model/Customer";
 import {Order} from "../../../shared/model/Order";
 import {OrderService} from "../../../shared/service/order.service";
 
@@ -56,7 +56,7 @@ export class AddressComponent {
   orderPrint() {
     // console.log(this.addressForm.get('orszag')?.value + " orszag");
     console.log(this.orderForm.get('files')?.value+ "filedes");
-    let user: User = {
+    let user: Customer = {
       id: 0,
       name:"asdf",
       password: "asdf",

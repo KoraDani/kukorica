@@ -1,7 +1,6 @@
 package hu.back.kukorica.controller;
 
 import hu.back.kukorica.model.Address;
-import hu.back.kukorica.model.User;
 import hu.back.kukorica.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

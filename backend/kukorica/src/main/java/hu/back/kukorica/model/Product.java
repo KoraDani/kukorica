@@ -13,10 +13,10 @@ import javax.persistence.Id;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int productID;
     private String name;
     private String description;
     private int price;
     private int stockQuantity;
-    private String imageUrl;
+    private String imageURL;
 }

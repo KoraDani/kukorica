@@ -1,7 +1,7 @@
 package hu.back.kukorica.service;
 
 import hu.back.kukorica.dao.UserRepository;
-import hu.back.kukorica.model.User;
+import hu.back.kukorica.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -16,7 +16,7 @@ public class UserService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
-    public User saveUser(User user){
+    public Customer saveUser(Customer user){
         return this.userRepository.save(user);
     }
 
@@ -32,8 +32,8 @@ public class UserService implements UserDetailsService {
 //    }
 
     @Override
-    public User loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = this.userRepository.findByEmail(email);
+    public Customer loadUserByUsername(String email) throws UsernameNotFoundException {
+        Customer user = this.userRepository.findByEmail(email);
         if(user == null){
             throw new UsernameNotFoundException("Faild to find user by email" + email);
         }

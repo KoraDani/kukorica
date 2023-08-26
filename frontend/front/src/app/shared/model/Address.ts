@@ -1,12 +1,13 @@
-import {User} from "./User";
+import {Customer} from "./Customer";
 
 export interface Address{
-  id: number;
-  user_id: number;
+  addressID: number;
+  customerID: number;
   country: string;
+  postCardNumber: string;
   city: string;
   street: string;
-  house_number: number;
+  houseNumber: number;
   floor: number;
   door: number;
 }

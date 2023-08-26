@@ -1,16 +1,12 @@
 package hu.back.kukorica.controller;
 
-import hu.back.kukorica.model.User;
+import hu.back.kukorica.model.Customer;
 import hu.back.kukorica.service.UserService;
 import hu.back.kukorica.session.SessionRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/userController")
@@ -29,7 +25,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> loginUser(@RequestBody User userModel){
+    public ResponseEntity<Customer> loginUser(@RequestBody Customer userModel){
 //        System.out.println("emial: "+userModel.getEmail()+" pwd: "+ userModel.getPassword());
 //        User user = userService.loginUser(userModel);
 //        return new ResponseEntity<>(user, HttpStatus.OK);
@@ -46,10 +42,10 @@ public class UserController {
     }
 
     @PostMapping("/saveUser")
-    public ResponseEntity<User> saveUser(@RequestBody User userModel){
+    public ResponseEntity<Customer> saveUser(@RequestBody Customer userModel){
 //        userModel.setId(UUID.randomUUID().node());
 //        User user = userService.saveUser(userModel);
-        User user = new User(userModel.getId(),userModel.getFirstName(), userModel.getLastName(),userModel.getEmail(), userModel.getPassword(), userModel.getAddressId(), userModel.getPhone(), userModel.getCoins(), userModel.getSessionId());
+        Customer user = new Customer(userModel.getId(),userModel.getFirstName(), userModel.getLastName(),userModel.getEmail(), userModel.getPassword(), userModel.getAddressId(), userModel.getPhone(), userModel.getCoins(), userModel.getSessionId());
         System.out.println(userModel.getUsername() +" mentve");
         userService.saveUser(user);
         return ResponseEntity.ok(user);

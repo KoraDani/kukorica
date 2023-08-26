@@ -1,7 +1,6 @@
 package hu.back.kukorica.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,11 +15,10 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
-public class User implements UserDetails {
+public class Customer implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int customerID;
     private String firstName;
     private String lastName;
     private String email;
@@ -33,8 +31,8 @@ public class User implements UserDetails {
 //    private Role role;
 
 
-    public User(int id) {
-        this.id = id;
+    public Customer(int id) {
+        this.customerID = id;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package hu.back.kukorica.session;
 
-import hu.back.kukorica.model.User;
+import hu.back.kukorica.model.Customer;
 import hu.back.kukorica.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -41,7 +41,7 @@ public class SessionFilter extends OncePerRequestFilter {
             return;
         }
 
-        User user = userService.loadUserByUsername(email);
+        Customer user = userService.loadUserByUsername(email);
 
         final UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user,null,user.getAuthorities());
 

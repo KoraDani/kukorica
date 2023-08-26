@@ -16,10 +16,10 @@ import javax.persistence.Id;
 public class OrderDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int orderDetailId;
-    private int orderId;
+    private int orderDetailID;
+    private int orderID;
     private int productId;
-    private int Quantity;
+    private int quantity;
     private int unitPrice;
     private int totalPrice;
 }
