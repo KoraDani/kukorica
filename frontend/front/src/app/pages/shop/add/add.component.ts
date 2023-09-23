@@ -23,12 +23,12 @@ export class AddComponent {
 
   saveProduct() {
     let product: Product = {
-      id : 0,
+      productID : 0,
       name: this.productForm.get('productName')?.value,
       description: this.productForm.get('description')?.value,
-      amount: this.productForm.get('amount')?.value,
+      stock_quantity: this.productForm.get('amount')?.value,
       price: this.productForm.get('price')?.value,
-      photoUrl: this.productForm.get('photoUrl')?.value
+      imageURL: this.productForm.get('photoUrl')?.value
     };
     this.prodServ.save(product).subscribe(() =>{
       console.log("sikeres mentés");

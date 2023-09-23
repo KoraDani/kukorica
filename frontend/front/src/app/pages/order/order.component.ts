@@ -19,11 +19,6 @@ export class OrderComponent implements OnInit{
   }
 
   increaseAmount(id: number) {
-    // @ts-ignore
-    for(let item of this.cart){
-      if(item.id == id){
-        item.amount = item.amount +1;
-      }
-    }
+    //TODO átírni a darabszám növelést
   }
 }

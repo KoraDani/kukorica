@@ -6,10 +6,10 @@
     <mat-card-content>
       Leírás: {{item.description}}<br>
       Ár: {{item.price}}<br>
-      Darab: {{item.amount}}
+      Darab: {{item.stock_quantity}}
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="increaseAmount(item.id)" ></button>
+      <button mat-raised-button (click)="increaseAmount(item.productID)" ></button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -43,6 +43,7 @@ public class SessionFilter extends OncePerRequestFilter {
 
         Customer user = userService.loadUserByUsername(email);
 
+
         final UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user,null,user.getAuthorities());
 
         auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

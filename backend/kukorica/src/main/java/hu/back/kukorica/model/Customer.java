@@ -19,11 +19,10 @@ public class Customer implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerID;
-    private String firstName;
-    private String lastName;
+    private String surname;
+    private String forename;
     private String email;
     private String password;
-    private int addressId;
     private String phone;
     private int coins;
     private String sessionId;

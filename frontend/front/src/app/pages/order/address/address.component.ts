@@ -35,12 +35,13 @@ export class AddressComponent {
   saveAddress(){
 
     let address: Address = {
-      id: 0,
-      user_id: 1,
+      addressID: 0,
+      customerID: 1,
       country: this.addressForm.get('orszag')?.value,
+      postCardNumber: "",
       city: this.addressForm.get('varos')?.value,
       street: this.addressForm.get('utca')?.value,
-      house_number: this.addressForm.get('hazszam')?.value,
+      houseNumber: this.addressForm.get('hazszam')?.value,
       floor: Number(this.addressForm.get('emelet')?.value),
       door: Number(this.addressForm.get('ajto')?.value)
     }
@@ -57,8 +58,9 @@ export class AddressComponent {
     // console.log(this.addressForm.get('orszag')?.value + " orszag");
     console.log(this.orderForm.get('files')?.value+ "filedes");
     let user: Customer = {
-      id: 0,
-      name:"asdf",
+      customerID: 0,
+      surname: "",
+      forename: "",
       password: "asdf",
       email: "asdf@asdf.hu",
       coins: 0,
@@ -67,8 +69,8 @@ export class AddressComponent {
 
 
     let order: Order = {
-      id: 0,
-      user: user,
+      orderID: 0,
+      customerID: 0,
       // @ts-ignore
       address: null,
       orderFileUrl : this.orderForm.get('file')?.value,

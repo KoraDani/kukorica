@@ -33,6 +33,7 @@ public class ProductController {
     @PostMapping("/saveProduct")
     public ResponseEntity<Product> saveProduct(@RequestBody Product product){
         Product newProduct = this.productService.saveProduct(product);
+        System.out.println(newProduct.getStockQuantity());
         return new ResponseEntity<>(newProduct, HttpStatus.OK);
     }
 }

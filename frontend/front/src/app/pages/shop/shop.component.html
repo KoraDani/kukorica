@@ -5,11 +5,11 @@
     </mat-card-header>
     <mat-card-content>
       Leírás: {{item.description}}<br>
-      Ár: {{item.amount}}<br>
+      Ár: {{item.stock_quantity}}<br>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button (click)="changeToView()">Megtekintés</button>
-      <button mat-raised-button (click)="addToCart(item.id)">Kosárba</button>
+      <button mat-raised-button (click)="addToCart(item.productID)">Kosárba</button>
     </mat-card-actions>
   </mat-card>
 </div>

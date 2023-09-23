@@ -15,7 +15,8 @@ export class RegisterComponent {
   }
 
   registerGroup: FormGroup = new FormGroup({
-    nickname: new FormControl(),
+    surname: new FormControl(),
+    forename: new FormControl(),
     email: new FormControl(),
     pwd1: new FormControl(),
     pwd2: new FormControl()
@@ -26,8 +27,9 @@ export class RegisterComponent {
     let pwd2 = this.registerGroup.get('pwd2')?.value;
     if (pwd1 == pwd2) {
       let user: Customer = {
-        id: 0,
-        name: this.registerGroup.get('nickname')?.value,
+        customerID: 0,
+        surname: this.registerGroup.get('surname')?.value,
+        forename: this.registerGroup.get('forename')?.value,
         password: pwd1,
         email: this.registerGroup.get('email')?.value,
         coins: 1,

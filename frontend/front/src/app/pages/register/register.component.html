@@ -6,14 +6,17 @@
     <mat-card-content >
       <form [formGroup]="registerGroup" fxLayout="column" fxLayoutAlign="center center">
         <mat-form-field class="example-full-width">
-          <mat-label>Felhasználónév</mat-label>
-          <input matInput type="text" formControlName="nickname">
+          <mat-label>Vezetéknév:</mat-label>
+          <input matInput type="text" formControlName="surname">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Keresztnév:</mat-label>
+          <input matInput type="text" formControlName="forename">
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>Email cím</mat-label>
           <input matInput type="email" formControlName="email">
         </mat-form-field>
-        <br>
         <mat-form-field class="example-full-width">
           <mat-label>Jelszó</mat-label>
           <input matInput type="password" formControlName="pwd1">
